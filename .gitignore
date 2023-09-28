@@ -1,0 +1,8 @@
+# The Homework that is not yet Published
+/hw2_data
+
+# Macbook folder
+.DS_Store
+
+# VScode settings
+.vscode
