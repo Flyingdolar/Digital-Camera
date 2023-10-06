@@ -2,13 +2,13 @@ import cv2 as cv
 import numpy as np
 import os
 
-folderName = "subset"
-fileList = []
-mindist = 10000
-minfile = ""
-exposure = 0.18
-colorLevel = 256
-centWeight = [
+folderName = "subset"  # The folder name of the images
+fileList = []  # The list of the images
+mindist = 10000  # The minimum distance
+minfile = ""  # The file name of the best image
+exposure = 0.18  # The exposure time of the best image
+colorLevel = 256  # The color level of the image
+centWeight = [  # The central weight of the image
     [2, 0, 2, 0, 2],
     [0, 2, 4, 2, 0],
     [0, 4, 16, 4, 0],
