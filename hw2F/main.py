@@ -33,18 +33,18 @@ centWeight = np.array(
 )
 # Predict Data Setting
 idealExp = 0.18  # Ideal exposure level
-fileID = 50  # The ID of the target image
-targetFile = "../hw2/subset/000050.bmp"  # The file name of the target image
+fileID = 40  # The ID of the target image
+targetFile = "../hw2/subset/000040.bmp"  # The file name of the target image
 
 
 def getExposure(img, matrix):
     img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # Change img from BGR to Gray
-    dotProduct: float = 0
+    dotProduct = 0
     imgH, imgW = img.shape  # Get the size of the image
     matH, matW = matrix.shape  # Get the size of the matrix
 
     # Divide the image as matrix, and calculate the mean of each block
-    block: float = [[0 for w in range(matW)] for h in range(matH)]
+    block = [[0 for w in range(matW)] for h in range(matH)]
     for row in range(matH):
         for col in range(matW):
             stRow, edRow = row * (imgH // matH), (row + 1) * (imgH // matH)
@@ -64,8 +64,8 @@ for file in os.listdir(folderName):
     if file.endswith(".bmp"):
         fileList.append(file)
 
-print_m("Process Start", "info")
-print_m("Reading Training files...", "info")
+# Sort the file list
+fileList.sort()
 
 # The Array that stores the data
 expData = np.zeros((len(fileList), 2))
